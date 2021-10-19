@@ -1,10 +1,10 @@
+let url = "https://gpoly.blockscan.com/gasapi.ashx?apikey=key&method=gasoracle";
+
 // Fetch gas prices and updates badge
 function fetchPrices() {
-  fetch(
-    "http://api.zapper.fi/v1/gas-price?network=polygon&api_key=96e0cc51-a62e-42ca-acee-910ea7d2a241"
-  )
+  fetch(url)
     .then((response) => response.json())
-    .then((data) => data.fast.toFixed(0))
+    .then((data) => Number(data.result.ProposeGasPrice).toFixed(0))
     .then((value) => chrome.browserAction.setBadgeText({ text: value }));
 }
 

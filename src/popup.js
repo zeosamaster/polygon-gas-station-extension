@@ -1,15 +1,17 @@
+let url = "https://gpoly.blockscan.com/gasapi.ashx?apikey=key&method=gasoracle";
+
 // Force refreshes gas prices and displays details
-fetch(
-  "http://api.zapper.fi/v1/gas-price?network=polygon&api_key=96e0cc51-a62e-42ca-acee-910ea7d2a241"
-)
+fetch(url)
   .then((response) => response.json())
   .then((data) => {
-    chrome.browserAction.setBadgeText({ text: data.standard.toFixed(0) });
-    setValue("standard", data.standard);
-    setValue("fast", data.fast);
-    setValue("instant", data.instant);
+    chrome.browserAction.setBadgeText({
+      text: Number(data.result.ProposeGasPrice).toFixed(0),
+    });
+    setValue("standard", data.result.SafeGasPrice);
+    setValue("fast", data.result.ProposeGasPrice);
+    setValue("instant", data.result.FastGasPrice);
   });
 
 function setValue(id, value) {
-  document.getElementById(id).textContent = value.toFixed(0);
+  document.getElementById(id).textContent = Number(value).toFixed(0);
 }
