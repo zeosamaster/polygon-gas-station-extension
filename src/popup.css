@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Manrope";
+  src: url("Manrope-VariableFont_wght.ttf");
+}
+
+body {
+  width: 300px;
+  height: 134px;
+  font-family: "Manrope";
+  font-size: 22px;
+  font-weight: bold;
+  background-image: url("background.png");
+  background-size: 110%;
+  background-position: -15px;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  padding: 8px;
+  padding-bottom: 0;
+}
+.container > div {
+  margin: 8px;
+  margin-bottom: 0;
+}
+
+.price_box {
+  position: relative;
+  width: 80px;
+  height: 100px;
+  background-color: #8248e5;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.36);
+  color: white;
+  text-align: center;
+}
+
+.price {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+}
+
+.speed {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  font-weight: normal;
+  font-size: 15px;
+}
+
+#polygon_logo {
+  width: 62px;
+  height: 14px;
+}
