@@ -10,7 +10,7 @@
         "64": "icons/icon64.png",
         "128": "icons/icon128.png"
     },
-    "permissions": ["alarms"],
+    "permissions": ["alarms", "contextMenus"],
     "background": {
         "scripts": ["background.js"],
         "persistent": true

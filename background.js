@@ -14,5 +14,21 @@ chrome.alarms.create("refresh", { periodInMinutes: 1 });
 // Fetches gas prices on alarm trigger
 chrome.alarms.onAlarm.addListener(fetchPrices);
 
+// Toggle watcher
+let isWatching = true;
+function toggleWatcher() {
+  if (isWatching) {
+    chrome.alarms.onAlarm.removeListener(fetchPrices);
+    chrome.browserAction.setBadgeText({ text: "" });
+    isWatching = false;
+  } else {
+    chrome.alarms.onAlarm.addListener(fetchPrices);
+    fetchPrices();
+    isWatching = true;
+  }
+}
+
+chrome.contextMenus.create({ onclick: toggleWatcher, title: "Toggle On/Off" });
+
 // Calls on browser launch
 fetchPrices();

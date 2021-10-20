@@ -5,9 +5,6 @@ function getPrices() {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      chrome.browserAction.setBadgeText({
-        text: Number(data.result.ProposeGasPrice).toFixed(0),
-      });
       setValue("standard", data.result.SafeGasPrice);
       setValue("fast", data.result.ProposeGasPrice);
       setValue("instant", data.result.FastGasPrice);
