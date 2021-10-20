@@ -8,6 +8,15 @@ function getPrices() {
       setValue("standard", data.result.SafeGasPrice);
       setValue("fast", data.result.ProposeGasPrice);
       setValue("instant", data.result.FastGasPrice);
+      if (chrome && chrome.browserAction) {
+        chrome.browserAction.getBadgeText({}, (value) => {
+          if (value !== "") {
+            chrome.browserAction.setBadgeText({
+              text: Number(data.result.ProposeGasPrice).toFixed(0),
+            });
+          }
+        });
+      }
     });
 }
 
