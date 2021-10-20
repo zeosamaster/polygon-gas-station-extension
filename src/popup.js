@@ -15,7 +15,7 @@ function getPrices() {
 }
 
 function setValue(id, value) {
-  document.getElementById(id).textContent = Number(value).toFixed(0);
+  document.getElementById(id).innerHTML = Number(value).toFixed(0);
 }
 
 setInterval(getPrices, 500);

@@ -36,7 +36,7 @@ body {
 
 .price {
   position: absolute;
-  top: 35px;
+  top: 30px;
   left: 0;
   width: 100%;
 }
@@ -53,4 +53,9 @@ body {
 #polygon_logo {
   width: 62px;
   height: 14px;
+}
+
+.loader {
+  width: 50px;
+  margin-top: -10px;
 }
