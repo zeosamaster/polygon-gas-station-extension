@@ -11,11 +11,11 @@ function fetchPrices() {
 // Creates alarm that fires every minute
 chrome.alarms.create("refresh", { periodInMinutes: 1 });
 
-// Fetches gas prices on alarm trigger
-chrome.alarms.onAlarm.addListener(fetchPrices);
+// // Fetches gas prices on alarm trigger
+// chrome.alarms.onAlarm.addListener(fetchPrices);
 
 // Toggle watcher
-let isWatching = true;
+let isWatching = false;
 function toggleWatcher() {
   if (isWatching) {
     chrome.alarms.onAlarm.removeListener(fetchPrices);
@@ -30,5 +30,5 @@ function toggleWatcher() {
 
 chrome.contextMenus.create({ onclick: toggleWatcher, title: "Toggle On/Off" });
 
-// Calls on browser launch
-fetchPrices();
+// // Calls on browser launch
+// fetchPrices();

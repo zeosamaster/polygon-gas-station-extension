@@ -6,6 +6,7 @@ An extension that keeps track of the current Polygon gas prices.
 
 - Extension banner
   - Displays the current fast gas price
+  - Off by default
   - Updated every minute
 - Extension popup
   - Displays the current standard / fast / instant gas prices
